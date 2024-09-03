@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://x5rltfgvy3nv"]
+
+[ext_resource type="Texture2D" uid="uid://uxee18p42g4l" path="res://objects/detectors/detectors.png" id="2_te3hd"]
+[ext_resource type="Script" path="res://objects/detectors/detector.gd" id="3_iliol"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bovbd"]
+size = Vector2(15, 15)
+
+[node name="detector" type="Sprite2D"]
+self_modulate = Color(1, 0.501961, 0, 1)
+texture = ExtResource("2_te3hd")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+script = ExtResource("3_iliol")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
+shape = SubResource("RectangleShape2D_bovbd")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_exited"]

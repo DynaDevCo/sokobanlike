@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://bbp1bahercjih"]
+
+[ext_resource type="Texture2D" uid="uid://cefm68jotthe6" path="res://objects/obstacles/obstacles.png" id="1_et4xi"]
+[ext_resource type="Script" path="res://objects/obstacles/obstacle.gd" id="2_lql0q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bovbd"]
+size = Vector2(15, 15)
+
+[node name="obstacle" type="Sprite2D"]
+self_modulate = Color(1, 1, 0, 1)
+z_index = 1
+texture = ExtResource("1_et4xi")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+script = ExtResource("2_lql0q")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
+shape = SubResource("RectangleShape2D_bovbd")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_input_event"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_mouse_exited"]

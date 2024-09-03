@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://b5djmjs5wey50"]
+
+[ext_resource type="Script" path="res://palettes/palettizer.gd" id="1_crygo"]
+[ext_resource type="Texture2D" uid="uid://ng7hlmn8jfbc" path="res://palettes/palettes/superhot_2.png" id="2_h8t75"]
+[ext_resource type="Material" uid="uid://cvi7x6gjbq1d4" path="res://palettes/palette_material.tres" id="3_3fx0i"]
+
+[node name="Palettizer" type="CanvasLayer"]
+script = ExtResource("1_crygo")
+palette = ExtResource("2_h8t75")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = ExtResource("3_3fx0i")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
