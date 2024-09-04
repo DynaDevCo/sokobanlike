@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dyawfrs8aeqfa"
-path="res://.godot/imported/inverter.png-a79d5e0abb499b92703d42fe704dd8cc.ctex"
+uid="uid://da6r6tq7mrkpd"
+path="res://.godot/imported/walls.png-3d8dd69b186437a417a41a88a01619f2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://objects/inverters/inverter.png"
-dest_files=["res://.godot/imported/inverter.png-a79d5e0abb499b92703d42fe704dd8cc.ctex"]
+source_file="res://ldtk/tilemaps/walls.png"
+dest_files=["res://.godot/imported/walls.png-3d8dd69b186437a417a41a88a01619f2.ctex"]
 
 [params]
 

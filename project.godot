@@ -14,6 +14,14 @@ config/name="sokobanlike"
 run/main_scene="res://puzzles/puzzle_0.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 
+[autoload]
+
+GlobalEventBus="*res://global scripts/global_event_bus.gd"
+
+[display]
+
+window/size/mode=3
+
 [input]
 
 peek={

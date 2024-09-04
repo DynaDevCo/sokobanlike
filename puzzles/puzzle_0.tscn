@@ -1,140 +1,26 @@
-[gd_scene load_steps=11 format=4 uid="uid://cs1cd11bb2vlh"]
+[gd_scene load_steps=5 format=3 uid="uid://cs1cd11bb2vlh"]
 
-[ext_resource type="Texture2D" uid="uid://b6vammvs4lg8o" path="res://objects/walls/walls.png" id="1_uxjpo"]
-[ext_resource type="Texture2D" uid="uid://ua6o1dh4plxr" path="res://palettes/palettes/argon.png" id="2_4gi82"]
-[ext_resource type="PackedScene" uid="uid://dqafhau8sjjke" path="res://objects/boxes/box.tscn" id="3_o84j5"]
-[ext_resource type="PackedScene" uid="uid://cedwfmvprpb1p" path="res://objects/inverters/inverter.tscn" id="5_7wxib"]
+[ext_resource type="Texture2D" uid="uid://cq8uj64qseumj" path="res://palettes/palettes/icy_old.png" id="2_elp4e"]
+[ext_resource type="PackedScene" uid="uid://cl7mmlj0jhca7" path="res://puzzles/puzzle_2.tscn" id="3_825ri"]
 [ext_resource type="PackedScene" uid="uid://b5djmjs5wey50" path="res://palettes/palettizer.tscn" id="5_g6bii"]
-[ext_resource type="PackedScene" uid="uid://x5rltfgvy3nv" path="res://objects/detectors/detector.tscn" id="7_bwjxb"]
-[ext_resource type="PackedScene" uid="uid://bbp1bahercjih" path="res://objects/obstacles/obstacle.tscn" id="7_tbra2"]
 [ext_resource type="Texture2D" uid="uid://lr1t8joy7iw3" path="res://objects/UI/UI.png" id="9_bk7el"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yuti8"]
-texture = ExtResource("1_uxjpo")
-0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-1:0/0 = 0
-1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -8, 0, 0, -8, 0, -8, 8, 8, 8, 8, -8)
-2:0/0 = 0
-2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, 0, 0, -8, -8, -8, -8, 8, 8, 8, 8, 0)
-0:1/0 = 0
-0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, -8, -8, -8, 0, 0, 0, 0, 8, 8, 8)
-1:1/0 = 0
-1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -8, 8, -8, 8, 8, 0, 8)
-2:1/0 = 0
-2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 0, 8, 8, 0, 8, 0, 0)
-2:1/0/physics_layer_0/polygon_1/points = PackedVector2Array(-8, 0, -8, -8, 0, -8, 0, 0)
-0:2/0 = 0
-0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, -8, -8, -8, 8, 0, 8, 0, 0, 8, 0)
-1:2/0 = 0
-1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -8, 8, -8, 8, 0, 0, 0)
-1:2/0/physics_layer_0/polygon_1/points = PackedVector2Array(0, 8, -8, 8, -8, 0, 0, 0)
-2:2/0 = 0
-2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -8, -8, -8, -8, 8, 0, 8)
-0:3/0 = 0
-0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0, -8, -8, 8, -8, 8, 0)
-1:3/0 = 0
-1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -8, 8, -8, 8, 0, 0, 0)
-2:3/0 = 0
-2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 0, -8, 0, 0, -8, 0)
-3:0/0 = 0
-3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0, -8, 8, 8, 8, 8, 0)
-3:1/0 = 0
-3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, 0, 8, 0, 8, 8, 0, 8)
-3:2/0 = 0
-3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0, 0, 0, 0, 8, -8, 8)
-3:3/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_hms0v"]
-physics_layer_0/collision_layer = 1
-physics_layer_0/collision_mask = 0
-sources/1 = SubResource("TileSetAtlasSource_yuti8")
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Palettizer" parent="." instance=ExtResource("5_g6bii")]
-palette = ExtResource("2_4gi82")
+palette = ExtResource("2_elp4e")
 
-[node name="Puzzle" type="Node2D" parent="."]
-
-[node name="walls" type="TileMapLayer" parent="Puzzle"]
-self_modulate = Color(1, 0, 0, 1)
-position = Vector2(425, 317)
-tile_map_data = PackedByteArray("AAAEAPz/AQAAAAEAAAAEAP3/AQABAAEAAAAEAP7/AQABAAEAAAAEAP//AQABAAAAAAAEAAAAAQAAAAEAAAAEAAEAAQABAAEAAAAEAAIAAQABAAAAAAAAAP3/AQACAAIAAAAAAP7/AQACAAIAAAAAAP//AQACAAAAAAAAAAAAAQAAAAAAAAAAAAEAAQAAAAIAAAAAAAIAAQACAAAAAAAAAPz/AQAAAAIAAAABAPz/AQAAAAMAAAACAPz/AQAAAAMAAAADAPz/AQAAAAMAAAABAAIAAQADAAAAAAACAAIAAQADAAAAAAADAAIAAQADAAAAAAABAAEAAQACAAMAAAABAAAAAQAAAAIAAAABAP//AQADAAAAAAABAP7/AQADAAMAAAABAP3/AQADAAMAAAACAP3/AQADAAMAAAADAP3/AQADAAMAAAADAP7/AQADAAMAAAADAP//AQADAAAAAAADAAAAAQAAAAMAAAADAAEAAQADAAMAAAACAAEAAQADAAMAAAACAAAAAQAAAAMAAAACAP//AQADAAAAAAACAP7/AQADAAMAAAA=")
-tile_set = SubResource("TileSet_hms0v")
-
-[node name="inverter" parent="Puzzle" instance=ExtResource("5_7wxib")]
-position = Vector2(473, 333)
-
-[node name="inverter2" parent="Puzzle" instance=ExtResource("5_7wxib")]
-position = Vector2(441, 301)
-
-[node name="inverter3" parent="Puzzle" instance=ExtResource("5_7wxib")]
-position = Vector2(457, 301)
-
-[node name="inverter4" parent="Puzzle" instance=ExtResource("5_7wxib")]
-position = Vector2(473, 301)
-
-[node name="inverter5" parent="Puzzle" instance=ExtResource("5_7wxib")]
-position = Vector2(489, 301)
-
-[node name="box" parent="Puzzle" instance=ExtResource("3_o84j5")]
-position = Vector2(457, 333)
-region_rect = Rect2(32, 0, 16, 16)
-turns = 1
-
-[node name="box2" parent="Puzzle" instance=ExtResource("3_o84j5")]
-position = Vector2(473, 349)
-region_rect = Rect2(16, 0, 16, 16)
-turns = 0
-
-[node name="box3" parent="Puzzle" instance=ExtResource("3_o84j5")]
-position = Vector2(489, 349)
-region_rect = Rect2(48, 0, 16, 16)
-turns = 2
-
-[node name="box4" parent="Puzzle" instance=ExtResource("3_o84j5")]
-position = Vector2(441, 269)
-region_rect = Rect2(0, 16, 16, 16)
-icy = true
-
-[node name="box5" parent="Puzzle" instance=ExtResource("3_o84j5")]
-position = Vector2(489, 285)
-region_rect = Rect2(32, 16, 16, 16)
-icy = true
-turns = 1
-
-[node name="detector" parent="Puzzle" instance=ExtResource("7_bwjxb")]
-self_modulate = Color(1, 1, 0, 1)
-position = Vector2(441, 349)
-
-[node name="detector4" parent="Puzzle" instance=ExtResource("7_bwjxb")]
-self_modulate = Color(1, 0, 0, 1)
-position = Vector2(473, 349)
-region_rect = Rect2(16, 0, 16, 16)
-inverted = true
-
-[node name="detector2" parent="Puzzle" instance=ExtResource("7_bwjxb")]
-self_modulate = Color(1, 1, 0, 1)
-position = Vector2(441, 285)
-
-[node name="detector3" parent="Puzzle" instance=ExtResource("7_bwjxb")]
-self_modulate = Color(1, 1, 0, 1)
-position = Vector2(457, 269)
-
-[node name="obstacle" parent="Puzzle" instance=ExtResource("7_tbra2")]
-self_modulate = Color(1, 0.5, 0, 1)
-position = Vector2(489, 333)
-region_rect = Rect2(16, 0, 16, 16)
-mode = 1
+[node name="Puzzle" parent="." instance=ExtResource("3_825ri")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(465, 309)
-zoom = Vector2(2, 2)
+zoom = Vector2(3, 3)
 
 [node name="Ui" type="Sprite2D" parent="."]
 self_modulate = Color(1, 1, 0, 1)
-position = Vector2(465, 381)
+position = Vector2(466, 427)
 texture = ExtResource("9_bk7el")
 region_enabled = true
 region_rect = Rect2(0, 16, 64, 16)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

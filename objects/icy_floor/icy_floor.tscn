@@ -1,13 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://cedwfmvprpb1p"]
 
-[ext_resource type="Texture2D" uid="uid://dyawfrs8aeqfa" path="res://objects/inverters/inverter.png" id="1_uh0b2"]
+[ext_resource type="Texture2D" uid="uid://dyawfrs8aeqfa" path="res://objects/icy_floor/inverter.png" id="1_d7unu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bovbd"]
 size = Vector2(15, 15)
 
-[node name="inverter" type="Sprite2D"]
+[node name="icy_floor" type="Sprite2D"]
 self_modulate = Color(1, 0, 0, 1)
-texture = ExtResource("1_uh0b2")
+texture = ExtResource("1_d7unu")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
 

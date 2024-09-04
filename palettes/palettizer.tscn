@@ -1,12 +1,12 @@
 [gd_scene load_steps=4 format=3 uid="uid://b5djmjs5wey50"]
 
 [ext_resource type="Script" path="res://palettes/palettizer.gd" id="1_crygo"]
-[ext_resource type="Texture2D" uid="uid://ng7hlmn8jfbc" path="res://palettes/palettes/superhot_2.png" id="2_h8t75"]
+[ext_resource type="Texture2D" uid="uid://d3gee8w1ahm64" path="res://palettes/palettes/regal.png" id="2_lawje"]
 [ext_resource type="Material" uid="uid://cvi7x6gjbq1d4" path="res://palettes/palette_material.tres" id="3_3fx0i"]
 
 [node name="Palettizer" type="CanvasLayer"]
 script = ExtResource("1_crygo")
-palette = ExtResource("2_h8t75")
+palette = ExtResource("2_lawje")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = ExtResource("3_3fx0i")
