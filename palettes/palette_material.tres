@@ -1,8 +1,8 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://cvi7x6gjbq1d4"]
 
 [ext_resource type="Shader" uid="uid://ddirre4or5suy" path="res://palettes/palettizer.tres" id="1_ntk6k"]
-[ext_resource type="Texture2D" uid="uid://cuywlvlf8yimf" path="res://palettes/palettes/superhot_old.png" id="2_mbiff"]
+[ext_resource type="Texture2D" uid="uid://cdcue53ythntf" path="res://palettes/palettes/blueprint.png" id="2_1p01i"]
 
 [resource]
 shader = ExtResource("1_ntk6k")
-shader_parameter/Palette = ExtResource("2_mbiff")
+shader_parameter/Palette = ExtResource("2_1p01i")

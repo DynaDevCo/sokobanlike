@@ -9,13 +9,14 @@ func submit_push_attempt(direction:Vector2,box):
 		box_dict[box] = true
 		pp.position = box.position + 16 * direction
 		box = check_collision(pp,space,"box")
+		if box == null:
+			if check_collision(pp,space,"wall"): return
 	for b in box_dict:
 		pp.position = b.position + 16 * direction
-		if check_collision(pp,space,"wall"):
-			return
 		push_box(b,direction)
 		if b.anti == check_collision(pp,space,"icy"):
 			box_dict.erase(box)
+			
 
 func push_box(box:Node,direction:Vector2):
 	var animation_player: AnimationPlayer = box.get_node("AnimationPlayer")
