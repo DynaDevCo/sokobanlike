@@ -7,7 +7,7 @@
 size = Vector2(15, 15)
 
 [node name="detector" type="Sprite2D"]
-self_modulate = Color(1, 0.501961, 0, 1)
+self_modulate = Color(1, 1, 0, 1)
 texture = ExtResource("2_te3hd")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)

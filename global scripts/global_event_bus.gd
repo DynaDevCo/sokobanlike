@@ -8,13 +8,28 @@ func submit_push_attempt(direction:Vector2,box):
 	while box:
 		box_dict[box] = true
 		pp.position = box.position + 16 * direction
+		box = check_collision(pp,space,"box")
+	for b in box_dict:
+		pp.position = b.position + 16 * direction
 		if check_collision(pp,space,"wall"):
 			return
-		box = check_collision(pp,space,"box")
-	for n in box_dict:
-		n.position = n.position + 16 * direction
-		if n.anti == check_collision(pp,space,"icy"):
+		push_box(b,direction)
+		if b.anti == check_collision(pp,space,"icy"):
 			box_dict.erase(box)
+
+func push_box(box:Node,direction:Vector2):
+	var animation_player: AnimationPlayer = box.get_node("AnimationPlayer")
+	var name = {
+		Vector2.UP:"move_up",
+		Vector2.DOWN:"move_down",
+		Vector2.LEFT:"move_left",
+		Vector2.RIGHT:"move_right",
+	}[direction]
+	animation_player.play(name)
+	await animation_player.animation_finished
+	box.offset = Vector2.ZERO
+	box.position = box.position + 16 * direction
+	
 
 func check_collision(pp,space,mode:String):
 	if mode == "wall":

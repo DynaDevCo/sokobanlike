@@ -18,10 +18,6 @@ config/features=PackedStringArray("4.3", "Forward Plus")
 
 GlobalEventBus="*res://global scripts/global_event_bus.gd"
 
-[display]
-
-window/size/mode=3
-
 [input]
 
 peek={

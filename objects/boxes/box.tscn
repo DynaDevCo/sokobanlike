@@ -1,10 +1,99 @@
-[gd_scene load_steps=4 format=3 uid="uid://dqafhau8sjjke"]
+[gd_scene load_steps=11 format=3 uid="uid://dqafhau8sjjke"]
 
 [ext_resource type="Texture2D" uid="uid://bj50mkfppbuar" path="res://objects/boxes/boxes.png" id="1_0pr6h"]
 [ext_resource type="Script" path="res://objects/boxes/box.gd" id="2_8vifr"]
+[ext_resource type="PackedScene" uid="uid://bk7bi2jn6p88j" path="res://objects/boxes/arc_collider.tscn" id="3_7op3y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bovbd"]
 size = Vector2(15, 15)
+
+[sub_resource type="Animation" id="Animation_76rgc"]
+resource_name = "move_up"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -16)]
+}
+
+[sub_resource type="Animation" id="Animation_6mk1g"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_67614"]
+resource_name = "move_down"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 16)]
+}
+
+[sub_resource type="Animation" id="Animation_kehnl"]
+resource_name = "move_right"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(16, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_h2uif"]
+resource_name = "move_left"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-16, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q72xy"]
+_data = {
+"RESET": SubResource("Animation_6mk1g"),
+"move_down": SubResource("Animation_67614"),
+"move_left": SubResource("Animation_h2uif"),
+"move_right": SubResource("Animation_kehnl"),
+"move_up": SubResource("Animation_76rgc")
+}
 
 [node name="Box" type="Sprite2D"]
 self_modulate = Color(1, 0.501961, 0, 1)
@@ -22,45 +111,21 @@ collision_mask = 0
 visible = false
 shape = SubResource("RectangleShape2D_bovbd")
 
-[node name="Right" type="Area2D" parent="."]
-collision_layer = 128
-collision_mask = 0
+[node name="Right" parent="." instance=ExtResource("3_7op3y")]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Right"]
-visible = false
-position = Vector2(-8, 3)
-polygon = PackedVector2Array(25, -1, 25, -7, 23, -13, 29, -16, 32, -9, 33, -1, 32, 2, 29, 8, 24, 8, 25, 3)
-
-[node name="Left" type="Area2D" parent="."]
-collision_layer = 128
-collision_mask = 0
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Left"]
-visible = false
-position = Vector2(9, 4)
-scale = Vector2(-0.997596, 1)
-polygon = PackedVector2Array(26.0627, 0, 23.0554, -11, 21.0506, -16, 25.0602, -15, 29.0699, -14, 33, -1, 31.0747, 5, 23.0554, 6, 26.0627, 3)
-
-[node name="Down" type="Area2D" parent="."]
-collision_layer = 128
-collision_mask = 0
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Down"]
-visible = false
-position = Vector2(-3, -8)
+[node name="Down" parent="." instance=ExtResource("3_7op3y")]
 rotation = 1.5708
-polygon = PackedVector2Array(25, -1, 25, -6, 24, -10, 20, -17, 27, -17, 31, -10, 31, -1, 27, 10, 22, 12, 20, 6, 24, 4)
 
-[node name="Up" type="Area2D" parent="."]
-collision_layer = 128
-collision_mask = 0
+[node name="Left" parent="." instance=ExtResource("3_7op3y")]
+rotation = 3.14159
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Up"]
-visible = false
-position = Vector2(-4, 9)
-rotation = 1.5708
-scale = Vector2(-0.997596, 1)
-polygon = PackedVector2Array(25.0602, -4, 25.0602, -10, 22.053, -15, 27.0651, -18, 31.0747, -14, 32.0771, -9, 31.0747, 1, 27.0651, 7, 23.0554, 4, 25.0602, 1)
+[node name="Up" parent="." instance=ExtResource("3_7op3y")]
+rotation = -1.5708
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_q72xy")
+}
 
 [connection signal="input_event" from="Grab" to="." method="_on_input_event"]
 [connection signal="mouse_entered" from="Grab" to="." method="_on_mouse_entered"]

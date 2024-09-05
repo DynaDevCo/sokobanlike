@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cs1cd11bb2vlh"]
 
-[ext_resource type="Texture2D" uid="uid://cq8uj64qseumj" path="res://palettes/palettes/icy_old.png" id="2_elp4e"]
+[ext_resource type="Texture2D" uid="uid://cuywlvlf8yimf" path="res://palettes/palettes/superhot_old.png" id="2_5hprc"]
 [ext_resource type="PackedScene" uid="uid://cl7mmlj0jhca7" path="res://puzzles/puzzle_2.tscn" id="3_825ri"]
 [ext_resource type="PackedScene" uid="uid://b5djmjs5wey50" path="res://palettes/palettizer.tscn" id="5_g6bii"]
 [ext_resource type="Texture2D" uid="uid://lr1t8joy7iw3" path="res://objects/UI/UI.png" id="9_bk7el"]
@@ -8,7 +8,7 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="Palettizer" parent="." instance=ExtResource("5_g6bii")]
-palette = ExtResource("2_elp4e")
+palette = ExtResource("2_5hprc")
 
 [node name="Puzzle" parent="." instance=ExtResource("3_825ri")]
 
@@ -22,5 +22,3 @@ position = Vector2(466, 427)
 texture = ExtResource("9_bk7el")
 region_enabled = true
 region_rect = Rect2(0, 16, 64, 16)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
