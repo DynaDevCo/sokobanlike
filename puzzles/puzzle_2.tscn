@@ -67,7 +67,6 @@ anti = null
 turns = 0
 
 [node name="detector" parent="." instance=ExtResource("3_fx2x6")]
-self_modulate = Color(1, 1, 0, 1)
 position = Vector2(521, 333)
 
 [node name="icy_floor" parent="." instance=ExtResource("4_7bqn4")]
